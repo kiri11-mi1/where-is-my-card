@@ -12,7 +12,7 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler(commands=['start'])
-async def start(message: types.Message):
+async def start(message: types.Message) -> None:
     await bot.send_message(message.chat.id, 'Hello World')
 
 

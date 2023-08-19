@@ -1,0 +1,44 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11.1
+
+      - name: install dependencies
+        run: |
+          cd ./src
+          python -m pip install --upgrade pip
+          pipenv install --dev --deploy --system --ignore-pipfile
+
+      - name: run pytest
+        run: pytest .
+
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11.1
+
+      - name: install dependencies
+        run: |
+          cd ./src
+          python -m pip install --upgrade pip
+          pipenv install --dev --deploy --system --ignore-pipfile
+
+      - name: run ruff
+        run: |
+          cd ./src
+          ruff --config=./pyproject.toml .

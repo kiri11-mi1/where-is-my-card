@@ -9,6 +9,12 @@ pydantic = "*"
 pydantic-settings = "*"
 
 [dev-packages]
+pytest = "*"
+pytest-asyncio = "*"
+faker = "*"
+mypy = "*"
+isort = "==5.12.0"
+ruff = "==0.0.277"
 
 [requires]
 python_version = "3.10"

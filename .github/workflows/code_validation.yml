@@ -21,7 +21,7 @@ jobs:
           pipenv install --dev --deploy --system --ignore-pipfile
 
       - name: run pytest
-        run: pytest ./src
+        run: pytest .
 
   linter:
     runs-on: ubuntu-latest
@@ -61,4 +61,6 @@ jobs:
           pipenv install --dev --deploy --system --ignore-pipfile
 
       - name: run mypy
-        run: mypy ./src
+        run: |
+          cd ./src
+          mypy .

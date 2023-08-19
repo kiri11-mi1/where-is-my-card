@@ -1,11 +1,10 @@
-from aiogram import Bot, Dispatcher, types, executor
-import settings
 import logging
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(levelname)s] -  %(name)s - %(filename)s: %(lineno)d - %(message)s"
-)
+from aiogram import Bot, Dispatcher, executor, types
+
+import settings
+
+logging.basicConfig(level=logging.INFO, format="[%(levelname)s] -  %(name)s - %(filename)s: %(lineno)d - %(message)s")
 
 credentials = settings.Credentials()
 bot = Bot(token=credentials.TELEGRAM_TOKEN)

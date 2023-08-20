@@ -1,3 +1,5 @@
+from typing import Any
+
 from pydantic import UUID4, BaseModel
 
 
@@ -13,4 +15,4 @@ class ProgramLoyalty(BaseModel):
     user_id: str
     code: str
     slug: str
-    credentials: dict  # TODO: схемы пайдантика
+    credentials: dict[str, Any]  # TODO: схемы пайдантика

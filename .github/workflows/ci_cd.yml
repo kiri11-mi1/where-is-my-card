@@ -25,7 +25,9 @@ jobs:
           pipenv install --dev --deploy --system --ignore-pipfile
 
       - name: run pytest
-        run: pytest .
+        run: |
+          cd .src/
+          pytest tests/
 
   linter:
     runs-on: ubuntu-latest

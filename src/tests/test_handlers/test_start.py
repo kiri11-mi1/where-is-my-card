@@ -1,7 +1,7 @@
 from unittest import mock
 
 import pytest
-from handlers import start
+from handlers.endpoints import start
 
 
 @pytest.mark.asyncio()

@@ -3,6 +3,7 @@ from unittest import mock
 import pytest
 from faker import Faker
 from polyfactory.factories.pydantic_factory import ModelFactory
+
 from services.database.schemas import User
 
 

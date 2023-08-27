@@ -1,5 +1,5 @@
 from aiogram import types
-from services.database import BaseDatabaseService
+from services.database.base_service import BaseDatabaseService
 
 from .replies import GREETING
 
